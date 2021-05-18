@@ -4,7 +4,7 @@ An Android exercise for developers teaching how to play around with RecyclerView
 
 ## Background:
 
-In this project, we are creating a TODO list app.
+In this project, we are creating a to do list app.
 The user can insert TodoItems, mark them as DONE or IN-PROGRESS, and delete them.
 
 The exact SPECS can be found at file `MainActivity.java`.
@@ -21,7 +21,7 @@ UI should be implemented at `MainActivity.java`.
 Take a look at the following files, read all of them, and make sure you understand them before starting to write any code:
 * `TodoItemsHolder.java` (interface)
 * `TodoItemsHolderImpl.java` (default implementation of the interface)
-* `TodoItem` (data class representing a TODO item)
+* `TodoItem` (data class representing a to do item)
 * `MainActivity.java` (screen)
 
 After you understand them, go ahead and implement the needed SPECS as defined in `MainActivity`.
