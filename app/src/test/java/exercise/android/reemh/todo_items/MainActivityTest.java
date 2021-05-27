@@ -40,7 +40,7 @@ public class MainActivityTest extends TestCase {
 
     // let the activity use our `mockHolder` as the TodoItemsHolder
     MainActivity activityUnderTest = activityController.get();
-    activityUnderTest.holder = mockHolder;
+//    activityUnderTest.holder = mockHolder;
   }
 
   @Test

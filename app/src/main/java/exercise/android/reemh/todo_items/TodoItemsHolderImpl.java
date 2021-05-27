@@ -2,7 +2,6 @@ package exercise.android.reemh.todo_items;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 
@@ -22,6 +21,24 @@ public class TodoItemsHolderImpl implements TodoItemsHolder {
 
   @Override
   public List<TodoItem> getCurrentItems() {return this._todoList;}
+
+  public void setCurrentItems(List<TodoItem> newLst)
+  {
+    this._todoList = newLst;
+  }
+
+  public void itemEdited(TodoItem item)
+  {
+    int j = 0;
+    for (TodoItem i:this._todoList) {
+      if (i.creationDate.equals(item.creationDate))
+      {
+        this._todoList.set(j, item);
+        return;
+      }
+      j ++;
+    }
+  }
 
   @Override
   public void addNewInProgressItem(String description)
@@ -59,7 +76,5 @@ public class TodoItemsHolderImpl implements TodoItemsHolder {
 
   @Override
   public void deleteItem(TodoItem item)
-  {
-    this._todoList.remove(item);
-  }
+  {this._todoList.remove(item);}
 }

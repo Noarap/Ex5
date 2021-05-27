@@ -13,7 +13,7 @@ public class CompareItems implements Comparator<TodoItem>
                 return -1;
             }
             else {
-                if (it1.getItemTimeCtr() < it2.getItemTimeCtr())
+                if (it1.creationDate.getTime() < it2.creationDate.getTime())
                 {
                     return 1;
                 }
@@ -25,7 +25,7 @@ public class CompareItems implements Comparator<TodoItem>
         }
         else
         {
-            if (it1.getItemTimeCtr()<it2.getItemTimeCtr())
+            if (it1.modificationDate.getTime()<it2.modificationDate.getTime())
             {
                 return 1;
             }

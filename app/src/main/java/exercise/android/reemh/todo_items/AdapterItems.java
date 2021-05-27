@@ -26,7 +26,7 @@ public class AdapterItems extends RecyclerView.Adapter<ItemHolderView>
     @NonNull
     @Override
     public ItemHolderView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = this.layoutInflater.inflate(R.layout.row_todo_item, parent, false);
+        View view = this.layoutInflater.inflate(R.layout.single_item, parent, false);
         return new ItemHolderView(view);
     }
 
@@ -58,6 +58,12 @@ public class AdapterItems extends RecyclerView.Adapter<ItemHolderView>
         holder.deleteButton.setOnClickListener(view -> {
             this.itemsHolder.deleteItem(item);
             notifyDataSetChanged();
+        });
+
+        holder.editTask.setOnClickListener(v ->{
+            Intent intent = new Intent(this.context, EditItemActivity.class);
+            intent.putExtra("item", item);
+            this.context.startActivity(intent);
         });
     }
 

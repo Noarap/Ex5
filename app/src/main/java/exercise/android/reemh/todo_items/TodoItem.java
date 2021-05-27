@@ -1,7 +1,7 @@
 package exercise.android.reemh.todo_items;
 
 import java.io.Serializable;
-import java.util.Comparator;
+import java.util.Date;
 
 enum Status {DONE, IN_PROGRESS}
 
@@ -9,28 +9,30 @@ public class TodoItem implements Serializable {
 
     private Status _status;
     private String _description;
-    private int _itemTimeCtr;
     public static int timeCtr = 1;
+    public Date creationDate;
+    public Date modificationDate;
 
     //constructor
     public TodoItem()
     {
-        _itemTimeCtr = timeCtr;
         timeCtr++;
+        creationDate = new Date();
+        modificationDate = creationDate;
     }
 
     public TodoItem(Status status, String description)
     {
         this._status = status;
         this._description = description;
-        _itemTimeCtr = timeCtr;
         timeCtr++;
+        creationDate = new Date();
+        modificationDate = creationDate;
     }
 
     //getters
     public Status getStatus() {return this._status;}
     public String getDescription() {return this._description;}
-    public int getItemTimeCtr() {return this._itemTimeCtr;}
 
     //setters
     public void setStatus(Status newStatus) {this._status = newStatus;}
